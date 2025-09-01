@@ -1,7 +1,0 @@
-site_name: CLUZ
-
-plugins:
-  - search
-  - open-in-new-tab
-
-theme: readthedocs
