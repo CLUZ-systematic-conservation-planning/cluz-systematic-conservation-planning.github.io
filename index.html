@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="assets/css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -90,40 +91,50 @@
 <p><strong><em>CLUZ, Marxan, Marxan with Zones and QGIS are all freely available open-source software packages.</em></strong></p>
 <p><strong>Sign up to the <a href="https://kent.us19.list-manage.com/subscribe?u=c328b61dd6b0a361fc0910694&amp;id=a23395174d">CLUZ mailing list</a> for updates on software and training resources.</strong></p>
 <p><strong>CLUZ citation</strong>: Smith, RJ (2019). <a href="https://riojournal.com/article/33510/">The CLUZ plugin for QGIS: designing conservation area systems and other ecological networks.</a> Research Ideas and Outcomes 5, e33510.</p>
+<hr />
 <h2 id="cluz-overview">CLUZ overview</h2>
 <p>CLUZ and Marxan work by dividing the planning region into a series of planning units, listing the distribution of the conservation features found in each planning units, setting targets for the amount of each feature to be included in the ecological network and using computer software to identify portfolios of units that best meet these targets.</p>
 <p>This video gives some background to the systematic conservation planning approach and then shows how to use CLUZ and Marxan to identify priority areas for conservation.</p>
-<iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/sl1_UYQOMW4?start=1" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-</iframe>
+<div align="center">
+  <iframe width="336" height="189" 
+      src="https://www.youtube.com/embed/sl1_UYQOMW4?start=1" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen
+      style="border: 3px solid black; border-radius: 6px; margin-bottom:30px;">
+  </iframe>
+</div>
 
 <h2 id="the-cluz-approach">The CLUZ approach</h2>
 <p>The three ways that CLUZ can be used to develop these conservation land-use plans are:</p>
 <hr />
 <h3 id="1-using-marxan-to-identify-near-optimal-conservation-landscapes-and-seascapes">1) Using Marxan to identify near-optimal conservation landscapes and seascapes</h3>
 <div style="float: right; width: 40%; margin-left: 10px;">
-  <img src="images/CLUZ_Approach_1.png" alt="Planning units" style="width:100%;">
+  <img src="images/CLUZ screenshot 1.png" alt="Planning units" style="width:90%;">
 </div>
 
 <p>Marxan identifies near-optimal combinations of planning units that meet specified conservation targets. It does this by running the same analysis a set number of times and identifying the most efficient solution. Incorporating boundary costs into the process ensures that patches of contiguous units are selected, which increases the real-world applicability of the final outputs.</p>
+<div style="margin-top: 90px;"></div>
+
 <hr />
 <h3 id="2-using-marxan-to-produce-selection-frequency-scores">2) Using Marxan to produce selection frequency scores</h3>
 <div style="float: right; width: 40%; margin-left: 10px;">
-  <img src="images/CLUZ_Approach_2.png" alt="Planning units" style="width:100%;">
+  <img src="images/CLUZ screenshot 2.png" alt="Planning units" style="width:90%;">
 </div>
 
 <p>Marxan also records the number of times that each unit is selected in each of the different runs. This selection frequency score can be seen as a measure of irreplaceability, so that units that are selected in every run could be considered irreplaceable (based on their biodiversity value, cost and importance for maintaining connectivity). CLUZ can display these scores and the resultant maps are valuable because they give a conservation value for each planning unit.</p>
+<div style="margin-top: 70px;"></div>
+
 <hr />
 <h3 id="3-using-cluz-to-interactively-create-and-modify-existing-plans">3) Using CLUZ to interactively create and modify existing plans</h3>
 <div style="float: right; width: 40%; margin-left: 10px;">
-  <img src="images/CLUZ_Approach_3.png" alt="Planning units" style="width:100%;">
+  <img src="images/CLUZ screenshot 3.png" alt="Planning units" style="width:90%;">
 </div>
 
 <p>CLUZ can also be used to develop and modify conservation plans by interactively adding and removing units. These interactive functions automatically update information on how the selected units meet the conservation targets. CLUZ can also be used to display the distribution of each biodiversity element and to identify suitable units for swapping with selected units that are in unsuitable locations.</p>
+<div style="margin-top: 70px;"></div>
+
 <hr />
 <h2 id="the-cluz-files">The CLUZ files</h2>
 <p>CLUZ is a plugin for QGIS that is available for download through the QGIS Plugins Manager. CLUZ has been tested on <strong>QGIS v3.0</strong> and above but please install the latest version of <a href="https://www.qgis.org/">QGIS</a>.</p>
@@ -207,5 +218,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-09-01 14:13:58.999521+00:00
+Build Date UTC : 2025-09-02 09:53:18.697718+00:00
 -->
