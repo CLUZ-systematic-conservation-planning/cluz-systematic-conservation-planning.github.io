@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Producing the CLUZ files - CLUZ</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Producing the CLUZ files";
+        var mkdocs_page_input_path = "tutorials\\Exercise-two.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> CLUZ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Exercise-one/">An introduction to CLUZ</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Producing the CLUZ files</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1"></a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exercise-2-producing-the-cluz-files">Exercise 2: Producing the CLUZ files</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#part-2a-creating-the-planning-unit-shapefile-target-and-abundance-data">Part 2a: Creating the planning unit shapefile, target and abundance data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#part-2b-updating-the-status-of-the-planning-units">Part 2b: Updating the status of the planning units</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#part-2c-adding-abundance-data-and-updating-the-target-table">Part 2c: Adding abundance data and updating the target table</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">CLUZ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tutorials</li>
+      <li class="breadcrumb-item active">Producing the CLUZ files</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="a-tutorial-for-using-cluz-with-qgis">A tutorial for using CLUZ with QGIS</h1>
+<h2 id="_1"></h2>
+<h2 id="exercise-2-producing-the-cluz-files">Exercise 2: Producing the CLUZ files</h2>
+<p>CLUZ is a plugin for QGIS that lets people design conservation landscapes and seascapes based on the principles of systematic conservation planning. It can be used for on-screen terrestrial and marine spatial planning and also acts as a link for the Marxan and Marxan with Zones spatial prioritisation software packages. CLUZ was funded by the UK Government’s Darwin Initiative.</p>
+<p>This exercise shows how to produce the CLUZ files that you used in Exercise 1. The first part shows how to create these files and the second and third parts show how to update these files based on the available abundance and conservation status data.</p>
+<p>It is worth noting that when creating new files, QGIS is very stringent when it comes to the quality of input files and will not ignore errors with vector geometry. This is in contrast to other GIS software packages that ignore the errors, producing error-filled results without flagging up the problems. When using your own vector files, you can check for problems using the Vector&gt; Geometry Tools&gt; Check Validity modules and fix any errors using a range of tools provided by QGIS.</p>
+<h3 id="part-2a-creating-the-planning-unit-shapefile-target-and-abundance-data">Part 2a: Creating the planning unit shapefile, target and abundance data</h3>
+<p>In this section you will produce the blank files that CLUZ needs to operate.</p>
+<p>1) Get the tutorial files from <a href="https://anotherbobsmith.github.io/cluz.html">https://anotherbobsmith.github.io/cluz.html</a> by downloading the <strong>cluz_ex2.zip file</strong> (your Internet browser may warn you about downloading zip files but these CLUZ files are safe). Unzip the files and save the cluz_ex2 folder on your computer in a suitable location.</p>
+<p><a href="files/cluz_ex2.zip">CLUZ Exercise 2 data (cluz_ex2.zip)</a></p>
+<p>2) Click on the <strong>Open Data Source Manager</strong> <img src="/images/Data_manager.png" alt=" " width="20" height="20" style="vertical-align: middle;"> and choose to add a <strong>Vector layer</strong> <img src="/images/Vector.png" alt=" " width="50" height="20" style="vertical-align: middle;">. Add the <strong>nature reserve</strong> and <strong>hexagons</strong> shapefiles (<em>.shp</em>) from the cluz_ex2 folder to the View and display them. You will see the <strong>nature reserve</strong> layer shows the boundary of a protected area and the <strong>hexagons</strong> layer shows a number of 25 ha hexagons that have been clipped the planning region boundary. Hexagonal planning units are often used in conservation planning exercises but planning units can be any shape. <strong><em>Remove the two shapefiles from the View</em></strong>.</p>
+<p>Now add the <strong>planning units</strong> layer from the <em>\cluz_ex2</em> folder to the View. This was produced by using the Union function in QGIS to combine the nature reserve and hexagons layers and then deleting some tiny slither polygons that were created during the union process. Notice how each planning unit is a hexagon or a section of a hexagon if it crosses the nature reserve or planning region boundary. Make the planning units layer active and click on <strong>Open Attribute Table</strong> <img src="/images/Open attribute.png" alt=" " width="20" height="20" style="vertical-align: middle;"> button and notice that the table only contains fields called <strong>Name</strong> and <strong>Region</strong>. Close the table and <strong><em>remove the planning units layer from the View</em></strong>.</p>
+<p>3) Next you will create the CLUZ files by modifying the planning unit layer and creating the puvspr2.dat and target files. In the <strong>CLUZ</strong> menu choose <img src="/images/Apple.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Create initial CLUZ files</strong>. Click on the Select shapefile <strong>Browse</strong> button and select the <strong>planning units</strong> layer. Set the <strong>Area conversion factor as 10000</strong> as this will convert the Area values from m<sup>2</sup> to hectares. Click on the <strong>Set cost layer as equal to planning unit area</strong>. Set the input folder where the puvspr2.dat file will be stored as <em>\cluz_ex2\input</em> and specify that the target table should be named <strong>targets.csv</strong> and saved in the <em>\cluz_ex2</em> folder. Click on OK.</p>
+<p>Once the process has finished, add the planning units layer to the view again. Click on the <strong>Open Attribute Table</strong> button <img src="/images/Open attribute.png" alt=" " width="20" height="20" style="vertical-align: middle;"> again. Notice that CLUZ has added fields named <strong>Unit_ID</strong>, <strong>Area</strong>, <strong>Cost</strong> and <strong>Status</strong>. You will see that the unique <strong>Unit_ID</strong> value is set as the row number and that the <strong>Cost</strong> value is the same as the <strong>Area</strong> value (which will be 25 ha for the whole hexagons). <strong><em>Close the table and remove the planning units layer from the View</em></strong>.</p>
+<p>4) You have now created the files that CLUZ needs to undertake conservation planning. The puvspr2.dat and targets.csv files are blank but contain the required fields. In the later steps you will modify these tables but you must first create a CLUZ setup file. Do this by choosing <img src="/images/Cog_icon.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>View and edit CLUZ setup file</strong> from the CLUZ menu.</p>
+<p>Repeat the process you learnt about in Exercise 1. Click on the <strong>Browse</strong> buttons to set the different input parameters. These should be identical to those shown in the figure associated with Exercise 1b part 3, except the specified folder for the CLUZ files should be <em>\cluz_ex2</em> not <em>\cluz_ex1</em>. Use the <strong>Save As</strong> button to save the setup files as <strong>ex2.clz</strong> in the <strong>cluz_ex2</strong> folder.</p>
+<p><img src="/images/file setup 2.png" alt="" 
+     style="width:6.377777777777778in; height:4.0777777777777775in; display: block; margin: 0 auto;"></p>
+<p>Now click on the <strong>Open Target Table</strong> button <img src="/images/Target.png" alt=" " width="20" height="20" style="vertical-align: middle;"> and note that the table does not contain any data yet. Close the table to return to the View.</p>
+<h3 id="part-2b-updating-the-status-of-the-planning-units">Part 2b: Updating the status of the planning units</h3>
+<p>In this section you will update the Status information in the planning units layer. In particular, you will specify that planning units near to two proposed economic “growth points” should be Excluded and planning units within the nature reserve should be set as Conserved.</p>
+<p><img src="/images/select by location.png" alt="" 
+     style="width:2.7in; height:4in; float: right;"></p>
+<p>1) From the <em>\cluz_ex2</em> folder add the layer called <strong>growth_points.shp</strong> to the View. You will exclude all planning units that are within 2 km of these points, so the first step is to produce a layer showing the area that falls within this distance. In the QGIS menu <strong>Vector &gt; Geoprocessing Tools</strong> choose <strong>Buffer…</strong> <img src="/images/buffer.png" alt=" " width="20" height="20" style="vertical-align: middle;">. Set the <strong>Input layer</strong> as the growth points layer, the <strong>Distance</strong> as <strong>2000</strong>, the <strong>Segments</strong> as <strong>50</strong> and leave the other parameters as the default. Click on <strong>Run</strong> and then <strong>Close</strong>. You should see that a layer named <strong>Buffered</strong> has been added to the View.</p>
+<p>Now got to <strong>Vector &gt; Research Tools &gt; Select by Location</strong>. For the <strong>Select features from section</strong> choose <strong>Planning units</strong>. For the section on <strong>Where the features (geometric predicate)</strong> click on the tickbox for <img src="/images/Tick box.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>are within</strong>. For the <strong>By comparing to the features from</strong> choose <strong>Buffered</strong>. Now click on <strong>Run</strong> and then <strong>Close</strong>. In the View, turn off the <strong>Buffered</strong> layer and underneath you should see that 73 planning units have been selected and are shown in yellow.<br><br></p>
+<p>2) Now click on the open the <strong>Change Status Panel</strong> button <img src="/images/Status_button.png" alt=" " width="20" height="20" style="vertical-align: middle;"> and click on the Allow changes to Conserved and Excluded status tick box . This will display the Conserved and Excluded radio buttons, so select the Excluded radio button and click on the Change button.</p>
+<p>The selected units will now be coloured in purple to show they have <strong><em>Excluded</em></strong> status and will not be included in any portfolio selected by Marxan. Close the Change Status panel and remove the
+<strong>growth_points</strong> and <strong>Buffered</strong> layers from the View.</p>
+<p>3) The next step is to set the status of the <strong><em>Conserved</em></strong> units and this involves identifying the planning units that fall within the nature reserve. Make the planning unit layer active and click on the <strong>Open
+Attribute Table</strong> button <img src="/images/Open attribute.png" alt=" " width="20" height="20" style="vertical-align: middle;">. Once the table is open, click on the <strong>Select features using an expression button</strong> <img src="/images/express.png" alt=" " width="20" height="20" style="vertical-align: middle;">. In the Expression box type <strong>"NAME" = 'Ithemba'</strong> and click on the <strong>Select
+features button</strong> at the bottom of the dialog box. This will have selected all the planning units that belong to the nature reserve, which is called Ithemba and named in the original nature reserve
+layer. Close the dialog box, then close the attribute table and return to the View. You should see that all the planning units within the protected area have been selected and are shown in yellow.</p>
+<p>Now click on the <strong>Open Change Status Panel</strong> button again <img src="/images/Status_button.png" alt=" " width="20" height="20" style="vertical-align: middle;"> and click on the <strong>Allow Changes to Conserved and Excluded status</strong> tick box <img src="/images/Tick box.png" alt=" " width="20" height="20" style="vertical-align: middle;">. This time select the <strong><em>Conserved</em></strong> radio button <img src="/images/set as excluded.png" alt=" " width="100" height="20" style="vertical-align: middle;">
+and click on the <strong>Change</strong> button.</p>
+<h3 id="part-2c-adding-abundance-data-and-updating-the-target-table">Part 2c: Adding abundance data and updating the target table</h3>
+<p>You can use CLUZ to import data on the distribution of your conservation features, either by extracting
+the data from raster layers and shapefiles or using data that has been produced through other methods.
+In this section, you will extract landcover data from a raster file, plant distribution data from a vector file
+and will import bird distribution data from a csv file.</p>
+<p>1) Click on the <strong>Open Data Source Manager</strong> <img src="/images/Data_manager.png" alt=" " width="20" height="20" style="vertical-align: middle;"> and choose to add a <strong>Raster</strong> layer <img src="/images/Raster.png" alt=" " width="50" height="20" style="vertical-align: middle;">. Add the raster layer <strong>landcover.gpkg</strong> from the <em>\cluz_ex2</em> folder. This layer shows the distribution of 18
+landcover types, so each pixel has a value corresponding to the unique ID value of these 18 conservation features (the ID values range from 1 for Montane aquatic to 33 for Open Water). By
+default, QGIS shows this layer with a greyscale palette so if you want to change this, open the layer’s Properties dialog box and in the Symbology tab change the <strong>Render type</strong> to
+<strong>Palleted/Unique values</strong> and then click on the <strong>Classify</strong> and <strong>OK</strong> buttons.</p>
+<p>From the CLUZ menu, select <img src="/images/Convert_raster.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Convert raster layer to Marxan abundance data</strong>. This calculates the amount of each feature in each planning unit and then imports the data into the targets.csv and
+puvspr2.dat files. Select <strong>landcover</strong> as the layer to import, turn on the <img src="/images/User_defined.png" alt=" " width="150" height="20" style="vertical-align: middle;"> button and set the value as <strong>10000</strong> to convert from m<sup>2</sup> to hectares. Click OK.</p>
+<p><img src="/images/Landcover.png" alt="" 
+     style="width:6.377777777777778in; height:3.8in; display: block; margin: 0 auto;"></p>
+<p>Check the data have been imported correctly by clicking on the <strong>Open abundance table</strong> button <img src="/images/AB.png" alt=" " width="20" height="20" style="vertical-align: middle;"> and selecting all the features. Close the abundance table. Open the target table and notice that
+18 new rows have been added to the table <img src="/images/Target.png" alt=" " width="20" height="20" style="vertical-align: middle;"> and the numerical identifier of the added features has been added to the <strong>Id</strong> field. CLUZ has also calculated the total amount of each feature found in the
+planning region, and the total amount in Earmarked and Conserved planning units. The <strong>Name</strong>, <strong>Type</strong>, <strong>Target</strong> and <strong>Spf</strong> values are blank but you will fill those in later. Close the table and <strong>remove
+the landcover layer from the View</strong>.</p>
+<p>2) CLUZ can also be used to extract distribution data from shapefiles and to demonstrate this add the theme called <strong>cycads.shp</strong> from the <em>\cluz_ex2 folder</em>. The cycad theme shows the distribution of two
+plant species, one of which is found in two areas in the northwest and southwest.</p>
+<p>Make the theme active and click on the <strong>Open Attribute Table button</strong> <img src="/images/Open attribute.png" alt=" " width="20" height="20" style="vertical-align: middle;"> and notice that the table contains a field called <strong>ID</strong> containing the ID values <strong>105</strong> and <strong>107</strong>. All themes you wish to incorporate
+must contain a numeric field that contains the unique identifiers for each conservation feature.</p>
+<p>Close the table and in the <strong>CLUZ</strong> menu choose the <img src="/images/polyline.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Convert polyline or polygon themes to Marxan abundance data</strong> module. Select <strong>cycads.shp</strong> as the theme you want to use, leave the
+default value that the Layer ID field name is <strong>ID</strong>, turn on the <img src="/images/User_defined.png" alt=" " width="150" height="20" style="vertical-align: middle;"> button and set the value as <strong>10000</strong> to convert values from m<sup>2</sup>
+to hectares.</p>
+<p>3) Now you will add data on the presence of vulture nests using the <img src="/images/Import.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Import fields from table to Marxan abundance file</strong> option. The file <strong>nest_data.csv</strong> contains a count of the number of nests per
+planning unit so use the <strong>Browse</strong> button to specify the file and set the Layer ID field name as <strong>Unit_ID</strong>. Choose the <img src="/images/No_conversion.png" alt=" " width="300" height="20" style="vertical-align: middle;"> because this is count data and does not need to be converted. Then click on OK</p>
+<p>4) Click on the <strong>Open target table</strong> button <img src="/images/Target.png" alt=" " width="20" height="20" style="vertical-align: middle;"> and you will see the new features have been added and the cycad species have ID values of 105 and 107, whilst the vulture nest ID value is 156. You now
+need to add the relevant data on each of the 21 conservation features and you will do this in Excel. Open the <strong>targets.csv</strong> file that you created and the <strong>feature_details.csv</strong> file that are in the <em>/cluz_ex2</em> folder.</p>
+<p>Copy the conservation feature names, types, SPF values and targets from the <strong>feature_details.csv</strong> file, based on their ID values. The type codes are based on whether the feature is a man-made
+landcover type (Type 0), common natural landcover type (Type 1), an endemic or threatened landcover type (Type 2) or a species (Type 3). The SPF values are used by Marxan and must be
+set as higher than 0 (see the Marxan manual for more details). The targets reflect the conservation value of each feature.</p>
+<p>Save the data in your <strong>targets.csv</strong> file by clicking on the <strong>Save</strong> button and selecting <strong>Yes</strong>. Close the file in Excel and in CLUZ click on the <strong>Open target table</strong> button <img src="/images/Target.png" alt=" " width="20" height="20" style="vertical-align: middle;">. You should now see the
+updated information that you added and the <strong>PC_target</strong> field automatically updates to show how well the targets have been met.</p>
+<div style="text-align:center;">
+<b>YOU HAVE NOW COMPLETED THIS EXERCISE AND THE TABLES YOU HAVE PRODUCED<b>
+<b>SHOULD BE IDENTICAL TO THOSE PROVIDED IN EXERCISE 1<b>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Exercise-one/" class="btn btn-neutral float-left" title="An introduction to CLUZ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Exercise-one/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+      <script src="../../js/open_in_new_tab.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

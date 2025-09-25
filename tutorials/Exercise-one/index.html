@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>An introduction to CLUZ - CLUZ</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "An introduction to CLUZ";
+        var mkdocs_page_input_path = "tutorials\\Exercise-one.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> CLUZ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">An introduction to CLUZ</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1"></a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exercise-1-an-introduction-to-cluz">Exercise 1: An introduction to CLUZ</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#section-1a-setting-up-marxan-cluz-and-qgis">Section 1a - Setting up Marxan, CLUZ and QGIS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#section-1b-viewing-the-cluz-files">Section 1b - Viewing the CLUZ files</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#section-1c-on-screen-conservation-planning">Section 1c - On-screen conservation planning</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#section-1d-using-marxan-to-select-conservation-portfolios">Section 1d - Using Marxan to select conservation portfolios</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#results-table">Results table</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Exercise-two/">Producing the CLUZ files</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">CLUZ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tutorials</li>
+      <li class="breadcrumb-item active">An introduction to CLUZ</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="a-tutorial-for-using-cluz-with-qgis">A tutorial for using CLUZ with QGIS</h1>
+<h2 id="_1"></h2>
+<h2 id="exercise-1-an-introduction-to-cluz">Exercise 1: An introduction to CLUZ</h2>
+<p>CLUZ is a plugin for QGIS that lets people design conservation
+landscapes and seascapes based on the principles of systematic
+conservation planning. It can be used for on-screen terrestrial and
+marine spatial planning and also acts as a link for the Marxan and
+Marxan with Zones spatial prioritisation software packages. CLUZ was
+funded by the UK Government's Darwin Initiative.</p>
+<p>In this exercise you will first download the relevant files and save the
+QGIS project file that you will use in this exercise. In the second
+section you will view the CLUZ files and you will use these in the third
+section to carry out on-screen conservation planning to meet the
+required conservation targets. In the fourth section you will run Marxan
+through CLUZ to produce more efficient conservation plans.</p>
+<h3 id="section-1a-setting-up-marxan-cluz-and-qgis">Section 1a - Setting up Marxan, CLUZ and QGIS</h3>
+<p>1)  Obtain Marxan from the University of Queensland website
+    <a href="https://marxansolutions.org/">https://marxansolutions.org/</a> by downloading the Version 4.06 zip
+    file. YOU SHOULD PLACE MARXAN IN A FOLDER WHERE YOU HAVE PERMISSION
+    TO WRITE FILES. As part of running Marxan, CLUZ needs to update the
+    Marxan input file and so needs access to write in the folder where
+    Marxan is located.</p>
+<p>2)  CLUZ v3 requires version 3.0 or later of QGIS so make sure you have
+    a suitable version installed. Open QGIS, in the <strong>Plugins</strong> menu
+    select <strong>Manage and Install plugins...</strong> dialog box and scroll down
+    the list of plugins until you reach CLUZ. Select CLUZ in the list
+    and click on <strong>Install plugin</strong>. Close the dialog box. You will see
+    the CLUZ menu and eight buttons have been added to the toolbar.</p>
+<p>3)  Obtain the CLUZ tutorial files by downloading the <strong>cluz_ex1.zip</strong> file from
+    the link below and saving it in a suitable folder (your
+    Internet browser may warn you about downloading zip files but these
+    CLUZ files are safe). Unzip the tutorial files by right-clicking on
+    the zip file and choosing <strong>Extract All...</strong></p>
+<p><a href="files/cluz_ex1.zip">CLUZ Exercise 1 data (cluz_ex1.zip)</a></p>
+<h3 id="section-1b-viewing-the-cluz-files">Section 1b - Viewing the CLUZ files</h3>
+<p>CLUZ provides a set of tools that allow users to identify a portfolio of
+planning units that, when combined, meet specified conservation targets.
+To do this CLUZ uses three files that describe the planning units, the
+distributions of the conservation features and the conservation target
+for each conservation feature.</p>
+<p>A fourth file describes the location of these files and sets where the
+Marxan input and output data are stored. In this section you will view
+and familiarise yourself with these four files.</p>
+<p>1)  In QGIS go to the <strong>CLUZ</strong> menu and choose
+    <img src="/images/Cog_icon.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>View and edit CLUZ setup file</strong>.
+    This will open the File Settings dialog Box.</p>
+<p>2)  The <strong>File Settings</strong> dialog box will appear and you can use this to
+    set the location of each specified file and folder. Start by
+    clicking on the <strong>Browse</strong> button next to the <strong>Marxan location</strong>
+    input. Navigate to the folder where you saved Marxan and choose
+    <strong>Marxan_x64.exe</strong>.</p>
+<p>3)  Repeat the process to set the paths for the CLUZ data contained in
+    the <strong><em>cluz_ex1</em></strong> folder that you extracted from the zip file. Set
+    the input directory as <em>\cluz_ex1\input</em>, the output directory as
+    <em>\cluz_ex1\output</em>, the planning unit layer as
+    <em>\cluz_ex1\planning units.shp</em> and the target table as
+    <em>\cluz_ex1\targets.csv</em>. Set the <strong>Decimal places</strong> for numbers in
+    Abundance and Target table as <em>3</em>. Click on the <strong>Save As</strong> button
+    and save the file as <strong>ex1.clz</strong> in the <strong>cluz_ex1</strong> folder.</p>
+<p><img src="/images/file setup.png" alt="" 
+     style="width:6.377777777777778in; height:4.0777777777777775in; display: block; margin: 0 auto;"></p>
+<p>This will add and display the planning unit shapefile to the Table
+    of Contents. Click the <strong>Close</strong> button.</p>
+<p>4)  You will see that the theme consists of a number of hexagonal
+    planning units (there are 4661 in all) that are coloured according
+    to their conservation status (<strong><em>Available</em></strong>, <strong><em>Earmarked</em></strong>,
+    <strong><em>Conserved</em></strong> and <strong><em>Excluded</em></strong>). In the northeast of the study
+    region there is a patch of <strong><em>Conserved</em></strong> units and two smaller
+    patches of <strong><em>Excluded</em></strong> units are located below the
+    <strong><em>Conserved</em></strong> units.</p>
+<p>5)  Right-click on the name <strong>Planning units</strong> in the Table of Contents
+    and select <img src="/images/Open attribute.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Open Attribute Table</strong> from the
+    drop-down menu. You will see that the table contains five fields.</p>
+<p>The <strong>Unit_ID</strong> field contains a unique numerical ID value for each
+    planning unit, the <strong>Area</strong> field gives the area of each unit in
+    hectares. The <strong>Cost</strong> field gives the cost of including the unit in
+    any conservation portfolio (which in this case is set as the same as
+    its Area, as we want Marxan to minimise the area selected) and the
+    <strong>Status</strong> field that describes the conservation status of each
+    unit. The <strong>Previous</strong> field is not a required field in CLUZ but you
+    will use the information in that field for this tutorial exercise.</p>
+<p>6)  Close the <strong>Planning units</strong> attribute table and click on the <strong>Open
+    Target Table</strong> button
+    <img src="/images/Target.png" alt=" " width="20" height="20" style="vertical-align: middle;"> to display a table containing 8 fields. The
+    <strong>Id</strong> field lists the numeric ID of each conservation feature and
+    the <strong>Name</strong> field in the target table gives the full name of the
+    feature. The <strong>Target</strong> field gives the required amount of each
+    feature that should be represented in the final portfolio and the
+    <strong>Spf</strong> field lists the species penalty factor (this will be
+    explained in more detail later).</p>
+<p>The <strong>Ear+Cons</strong> field lists the amount of each feature that is
+    found in units that have <strong><em>Earmarked</em></strong> or <strong><em>Conserved</em></strong> status.
+    The <strong>Total</strong> field lists the total amount of each feature in all of
+    the units and the <strong>PC_target</strong> shows the percentage of the target
+    that has been reached, based on the <strong>Ear+Cons</strong> and <strong>Target</strong>
+    fields. The <strong>Type</strong> field is not a required CLUZ field but it can
+    be used to distinguish between different types of conservation
+    feature when setting the target values.</p>
+<p>Notice the two conservation features with a type value of 0. These
+    are landcover types with little or no conservation value and so
+    their target values have been set as 0. This means that only 19 of
+    the conservation features have targets set and the value of --1 will
+    appear in the <strong>PC_target</strong> field for those features with a target
+    value of 0.</p>
+<p>Notice also that values in the <strong>PC_target</strong> field are colour coded.
+    They are red if the target has not been met (value is less than
+    100%), green if the target has been met and grey if the target is 0.</p>
+<p>7)  Close the target table to return to the main QGIS window. The data
+    listing how much of each conservation feature is found in each
+    planning unit is stored in the Marxan file puvspr2.dat which is in
+    the <em>input</em> folder. To view these data, click on the <strong>Open
+    Abundance Table</strong> button
+    <img src="/images/AB.png" alt=" " width="20" height="20" style="vertical-align: middle;">  and you will see a dialog box listing the names
+    and ID values of the 21 conservation features. Select all of these
+    features and click on the <strong>OK</strong> button to show the abundance table.</p>
+<p>The first field is identical to the PU_ID field in the unit layer
+    table, whereas each of the other fields contains data on the
+    abundance of a particular conservation feature found in each
+    planning unit. Each of the fields containing data on a particular
+    feature has the column name "F_" followed by their id value.
+    <strong>Close</strong> the table to return to the main QGIS window.</p>
+<h3 id="section-1c-on-screen-conservation-planning">Section 1c - On-screen conservation planning</h3>
+<p>CLUZ is designed as an interface for Marxan but it can also be used on
+its own to carry out on-screen conservation planning. It lets the user
+change the conservation status of the different planning units and
+investigate how this affects the number of targets met by the portfolio
+of planning units. It also lets the user refine portfolios identified by
+Marxan to incorporate expert opinion. The main set of tools for
+on-screen planning is found on the <strong>Change Status panel</strong>, so this
+section explores these in more detail.</p>
+<p>The status of each planning unit can either be set as <strong><em>Conserved</em></strong>,
+<strong><em>Earmarked</em></strong>, <strong><em>Available</em></strong> or <strong><em>Excluded</em></strong>. <strong><em>Conserved</em></strong>
+units are those that fall within an existing protected area (PA), or
+other types of conservation area, and so already form part of the
+conservation portfolio. <strong><em>Excluded</em></strong> units are those that are
+unsuitable for ecological, political or other reasons and so will not
+form part of any portfolio.</p>
+<p>This means that most of the conservation planning that you will do
+involves changing the status of <strong><em>Available</em></strong> and <strong><em>Earmarked</em></strong>
+units. <strong><em>Available</em></strong> units are those that could form part of a
+portfolio but are not presently selected. <strong><em>Earmarked</em></strong> units are
+those that have been earmarked for conservation, i.e. they do not form
+part of an existing PA but they are part of the conservation portfolio
+that is being investigated.</p>
+<p>Designing a whole conservation area network through on-screen
+conservation planning can be quite laborious. So, in this exercise you
+will first add information from a previous conservation planning
+exercise and then use on-screen planning to meet the only unmet target.</p>
+<p>1)  Click on the <strong>Open Target Table</strong> button
+    <img src="/images/Target.png" alt=" " width="20" height="20" style="vertical-align: middle;"> to remind yourself of how well the current
+    protected area (shown in dark green as Conserved) meets the targets.
+    Notice that eight of the conservation features are completely
+    unrepresented (0.000%) and another six features have not met their
+    targets. Click on <strong>Close</strong>.</p>
+<p>2)  You will now load the results from the previous conservation
+    planning exercise, which are stored in the <strong>Previous</strong> field
+    (previously selected planning units are coded with a "1").
+    Right-click on the name <strong>Planning units</strong> in the Table of Contents
+    and select <img src="/images/Open attribute.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Open Attribute Table</strong> from the
+    drop-down menu. Now click on the <strong>Select features using an
+    expression</strong> button
+    <img src="/images/express.png" alt=" " width="20" height="20" style="vertical-align: middle;">. In the expression box type
+    <strong>\"Previous\" = 1</strong> and then click on the <strong>Select feature</strong>
+    button.</p>
+<p><img src="/images/express_tab.png" alt="" 
+     style="width:6.20183508311461in; height:2.241953193350831in; display: block; margin: 0 auto;"></p>
+<p><img src="/images/status.png" alt="" 
+     style="width:2.5833333333333335in; height:3.1770833333333335in; float: right;"></p>
+<p>Click on <strong>Close</strong> and then close the
+    Attribute table and return to the planning units in the View.</p>
+<p>You will see that you have selected a number of patches of planning
+    units, highlighted in yellow. These planning units were selected in
+    a previous conservation planning exercise and you will now set their
+    status to Earmarked, to show that they could be future conservation
+    areas. Do this by clicking on the <strong>Change planning unit status</strong>
+    button <img src="/images/Status_button.png" alt="" 
+     style="width:0.15625in; height:0.15625in;">.</p>
+<p>The panel shows the number of abundance targets that have been met
+    by the present portfolio, based on the values in the <strong>Target</strong> and
+    <strong>Ear+Cons</strong> fields in the target table. In this case, it will show
+    that 5 of the 19 targets have been met.</p>
+<p>3)  CLUZ assumes that you will only want to set the status of
+    <strong><em>Conserved</em></strong> and <strong><em>Excluded</em></strong> units at the beginning of the
+    process and that these units are likely to remain unchanged during
+    the rest of the on-screen planning process. This is why the option
+    to set the required status as <strong><em>Conserved</em></strong> or <strong><em>Excluded</em></strong> is
+    not automatically shown when you open the <strong>Change Status panel</strong>.</p>
+<p>If you want to set the status of selected units to <strong><em>Conserved</em></strong>
+    or <strong><em>Excluded</em></strong>, or if you want to change the status of
+    <strong><em>Conserved</em></strong> or <strong><em>Excluded</em></strong> units, then you need to click on
+    the <strong>Allow changes to Conserved and Excluded status</strong> checkbox
+    <img src="/images/Cross.png" alt=" " width="20" height="20" style="vertical-align: middle;">. You will NOT need to do this for
+    this tutorial.</p>
+<p>4)  <img src="/images/Status_map.png" alt="" 
+     style="width:2.1847222222222222in; height:1.898611111111111in; float: right;"> 
+Now click on the <strong>Change</strong> button in
+    the <strong>Change status</strong> panel and notice how the selected
+    <strong><em>Available</em></strong> units have been changed to <strong><em>Earmarked</em></strong> status
+    (as shown in the picture on the right). The number of Targets met is
+    now 18 of 19.</p>
+<p>Close the <strong>Change Status panel</strong> and click on the <strong>Open Target
+    Table</strong> button
+    <img src="/images/Target.png" alt=" " width="20" height="20" style="vertical-align: middle;">. By looking at the <strong>PC_target</strong> field you can
+    identify that all but one of the targets have now been meet. The
+    only conservation feature with an unmet target is <em>A. gigantica,</em> a
+    species of plant found in the west of the planning region.</p>
+<p>5)  To identify where best to meet the target for <em>A. gigantica</em>, you
+    need to look at its distribution. Go to the <strong>CLUZ</strong> menu and choose
+    <img src="/images/Species.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Display distribution of
+    conservation features</strong>. Select <strong>101 -- A_gigantica,</strong> from the
+    list in the dialog box and click on <strong>OK</strong>. It will show that this
+    species is found in the west of the planning region, just north of a
+    patch of Earmarked planning units.</p>
+<p>6)  You will now use the <strong>Change Status panel</strong> to carry out on-screen
+    conservation planning to meet the final target. Click on the
+    <strong>Change planning unit status</strong> button
+    <img src="/images/Status_button.png" alt="" 
+     style="width:0.15625in; height:0.15625in;"> and move it so it is not covering the planning
+    unit layer. Select the <strong>Earmarked Radio</strong> button
+    <img src="/images/Earmarked.png" alt="" 
+     style="width:1.1041666666666667in; height:0.1736111111111111in;"></p>
+<p>7)  <img src="/images/Select_feature.png" alt="" 
+     style="width:0.24440944881889765in; height:0.15748031496062992in;"> Click on the <strong>Select features</strong> tool
+    and from the drop-down menu, choose
+    <strong>Select Features by Polygon</strong>
+    <img src="/images/Select_feature.png" alt="" 
+     style="width:0.23293963254593175in; height:0.15748031496062992in;">. The target is under half of the
+    distribution of <em>A. gigantica</em> (2000 ha out of a total area of 4446
+    ha). To meet this, it makes sense to extend the patch of Earmarked
+    planning units that lies just south of where <em>A. gigantica</em> is
+    found, creating one large conservation area.</p>
+<blockquote>
+<p>Before you start digitising, check that the <strong>Planning units</strong> theme
+is active. You can tell this because the name of the active layer has
+a grey background in the Layers Panel on the left of the screen. If
+this theme is not active then click on its name in the Layer Panel.
+This step is important because the Select features tool only selects
+features in the active layer.</p>
+</blockquote>
+<p><img src="/images/Legend.png" alt="" 
+     style="width:2in; height:2.2in; float: right;"> Now move the mouse icon to the bottom of
+the <em>A. gigantica</em> patch and left-click once to start on-screen
+digitising a polygon. Then move the mouse icon and keep on left-clicking
+to set the boundaries of a polygon so that it covers the bottom half of
+the distribution polygon.</p>
+<p>Once you have finished digitising the polygon boundary, right click and
+the planning units you have specified will be selected (as shown in the
+picture on the right). These units will turn bright yellow but most of
+them are underneath the <em>A. gigantica</em> distribution layer, so you will
+see a more subtle colour change because this distribution layer is
+slightly transparent.</p>
+<p>8)  <img src="/images/Selected.png" alt="" 
+     style="width:1.3in; height:1.6in; float: right;">Turn off the <strong>A. gigantica</strong>
+    distribution layer to make the planning unit layer underneath
+    visible. Click on the <strong>Change</strong> button in the <strong>Change status</strong>
+    panel and notice how the selected <strong><em>Available</em></strong> units now have
+    <strong><em>Earmarked</em></strong> status (as shown in the picture on the right). Check
+    to see whether adding the selected units has met the final target.
+    If you have not met the target, then add a few more planning units
+    by repeating the process in steps 6 to 7. Once, you have met the
+    target then remove the <strong>A. gigantica</strong> distribution layer from the
+    View.</p>
+<p>9)  <img src="/images/Prioritised.png" alt="" 
+     style="width:1.7in; height:1.6in; float: right;">
+Once you are happy with your final portfolio, in the QGIS
+    <strong>Project</strong> menu select <strong>Import/Export</strong>, then <strong>Export Map to
+    Image...</strong> and click on <strong>Save</strong> to save the results as a file named
+    <strong>onscreen.png</strong> in the <strong>cluz_ex1</strong> folder.</p>
+<p><br>
+<br></p>
+<h3 id="section-1d-using-marxan-to-select-conservation-portfolios">Section 1d - Using Marxan to select conservation portfolios</h3>
+<p>In the previous section you will have seen that it is possible to use
+on-screen techniques to design a conservation portfolio. However, the
+results of these exercises tend to be inefficient and are more difficult
+to produce when dealing with a large number of targets. In this section
+you will use Marxan to produce a quicker and more efficient solution.</p>
+<p>1)  To convert the portfolio back to the original version, click on the
+    <strong>Change Earmarked units to Available button</strong>
+    <img src="/images/Make_avalible.png" alt="" 
+     style="width:0.16748031496062992in; height:0.16748031496062992in;"><strong>.</strong> This will show only the patch
+    of <strong><em>Conserved</em></strong> units and the two patches of <strong><em>Excluded</em></strong>
+    units. Remove any other layers so that only the planning unit layer
+    is present.</p>
+<p>2)  Marxan only uses specifically formatted text files to input the data
+    it needs, so the first step is to convert the CLUZ data into Marxan
+    format. Go to the <strong>CLUZ</strong> menu, choose the
+    <img src="/images/Make_Marxan.png" alt="" 
+     style="width:0.16748031496062992in; height:0.16748031496062992in;"> <strong>Create Marxan input files</strong> option
+    and click on all the checkboxes, so that you will produce all three
+    of the additional files used by Marxan.</p>
+<p>Selecting the <strong>Boundary file (bound.dat)</strong> checkbox gives you the
+    option to select the <strong>Include planning region boundaries</strong> option.
+    <strong>DO NOT</strong> click this <strong>Include planning region boundaries</strong>
+    checkbox, so that the edges of units that are not shared (i.e., form
+    the boundary of the study region) are not included in the
+    <strong>boundary.dat</strong> file. Including the external edges makes it less
+    likely Marxan will select planning units at the edge of the planning
+    region.</p>
+<p>Click on <strong>OK</strong> to produce all three of the additional files needed
+    by Marxan. These will be stored in the input folder you specified in
+    the setup file, together with the puvspr2.dat file that was already
+    stored in the input folder.</p>
+<p><strong>You are now ready to run Marxan. Remember that Marxan will only
+    use data from the text files you have just created. If you change
+    any of the CLUZ data you must update these text files by repeating
+    the process above before running Marxan.</strong></p>
+<p>3)  In the <strong>CLUZ</strong> menu choose
+    <img src="/images/Launch_marxan.png" alt="" 
+     style="width:0.17748031496062992in; height:0.16748031496062992in;"> <strong>Launch Marxan</strong>. Under <strong>Standard
+    options</strong> in the dialog box, you will see that the number of
+    iterations has been set as <strong>1000000</strong> and the number of runs as
+    <strong>10</strong>. Increasing the number of iterations and runs will generally
+    improve the efficiency of the portfolios that Marxan identifies but
+    also increases processing time.</p>
+<p>In this tutorial you will use these default values to reduce the
+    time Marxan spends processing the data. Set <strong>output1</strong> as the
+    <strong>Output file name</strong> and leave the <strong>Include boundary cost (BLM)</strong>
+    and <strong>Produce extra Marxan outputs</strong> checkboxes unchecked
+    <img src="/images/Blank_box.png" alt="" 
+     style="width:0.17748031496062992in; height:0.16748031496062992in;">. The
+    <strong>Produce extra Marxan outputs</strong> option saves files describing the
+    results from each run, which are not needed for this exercise.</p>
+<p>Click on <strong>Start Marxan</strong> and the Marxan dialog box should appear.
+    The Marxan dialog box will show that the data are being inputted and
+    will then give details on each of the 10 runs.</p>
+<p><strong>NB If you are a running CLUZ on a computer with high security
+    settings, your system might not let CLUZ run Marxan</strong>. If that
+    happens Marxan will produce the error message "Input file input.dat
+    not found. Aborting program" and/or it will look as though it has
+    frozen. To overcome this problem, you can run Marxan yourself by
+    using Windows Explorer to locate Marxan (the file path is specified
+    in your CLUZ setup file) and double clicking on it. Marxan should
+    now run and, once it is finished, CLUZ will display the results.</p>
+<p>4)  Return to <strong>QGIS</strong> and two new layers should be displayed. The
+    <strong>Best</strong> <strong>(output1)</strong> layer shows a portfolio of units in magenta.
+    This portfolio was the most efficient of the 10 solutions produced
+    by Marxan. Make the <strong>Best</strong> <strong>layer (output1)</strong> invisible and then
+    inspect the <strong>SF_Score (output1)</strong> <strong>layer</strong>.</p>
+<p>The summed layer shows the number of times that each unit was
+    selected to be part of one of the 10 portfolios. This is similar to
+    an irreplaceability score, with the most important units being
+    included in the largest number of portfolios.</p>
+<p>Click on the <strong>Open Marxan results table</strong> button
+    <img src="/images/Results.png" alt="" 
+     style="width:0.18748031496062992in; height:0.17748031496062992in;">
+    to view the text file that Marxan has saved in the <em>\output</em>
+    folder. This lists each feature, its target and whether the target
+    was met. In particular, <strong>Target met</strong> states yes or no and <strong>MPM</strong>
+    shows the Minimum Proportion Met of the target, i.e. if the MPM is
+    less than 0 then the target has not been met.</p>
+<p>5)  Make the <strong>Best layer</strong> active and open the <strong>Attribute Table</strong>
+    <img src="/images/Open attribute.png" alt="" 
+     style="width:0.18748031496062992in; height:0.17748031496062992in;">. Note that two fields have been added
+    to the table. The <strong>Best</strong> field contains the word <strong>Selected</strong> for
+    the units that were included in the most efficient portfolio and
+    <strong>SF_Score</strong> gives the irreplaceability score for each unit. The
+    information in these fields will be overwritten every time you run
+    Marxan.</p>
+<p>6)  You have now completed Analysis 1. In the next sections you will
+    learn how to save and calculate different characteristics of this
+    Analysis and three others, so you can investigate the results of
+    changing different parameters.</p>
+<p>As a first step, remove the <strong>SF_Score</strong> and <strong>Best layer</strong> from the
+    QGIS window and then click on the
+    <img src="/images/Change_status.png" alt="" 
+     style="width:0.18748031496062992in; height:0.17748031496062992in;"> <strong>Change the status of the Best
+    units to Earmarked</strong> button. This updates the portfolio so that it
+    includes the planning units identified by Marxan in the last
+    analysis. In the QGIS <strong>Project</strong> menu select <strong>Import/Export</strong> and
+    <strong>Export Map to Image...</strong>. Then click on <strong>Save</strong> to save the
+    screen view as a file named <strong>area_0.png</strong> in the <strong>cluz_ex1</strong>
+    folder.</p>
+<p>7)  You will now produce statistics describing this portfolio of
+    Earmarked and Conserved planning units by going to the CLUZ menu and
+    selecting <img src="/images/Portfolio.png" alt="" 
+     style="width:0.18748031496062992in; height:0.17748031496062992in;"> <strong>Calculate portfolio
+    characteristics</strong>. Make sure the
+    <img src="/images/Cross.png" alt="" 
+     style="width:0.18748031496062992in; height:0.17748031496062992in;"> tick boxes are selected for the
+    options to calculate the <strong>Planning unit details</strong> and <strong>Spatial
+    details (patch sizes and boundary length)</strong>. Also click on the
+    <strong>Selection frequency details of Available and Earmarked planning
+    units</strong> option, make sure the Field contains values for <strong>SF_Score</strong>
+    and set the <strong>Number of runs used in analysis</strong> as <strong>10</strong>, because
+    you used 10 runs in the Marxan analysis and so the maximum selection
+    frequency value cannot be higher than 10.</p>
+<p>You will now see displayed three separate tables (on three different
+    tabs) giving details on the portfolio. Write in the values in the
+    Results table on page 7 for Analysis 1. Note that the Total cost and
+    area values are the same because this analysis used planning unit
+    area as the planning unit cost metric (so that Marxan minimises the
+    area selected when meeting targets).</p>
+<p>8)  You have now finished Analysis 1 and so need to return the portfolio
+    to its original state. To convert the portfolio back to the original
+    version, click on the <strong>Change Earmarked units to Available button</strong>
+    <img src="/images/Make_avalible.png" alt="" 
+     style="width:0.18748031496062992in; height:0.17748031496062992in;"><strong>.</strong> This will show only the patch
+    of <strong><em>Conserved</em></strong> units and the two patches of <strong><em>Excluded</em></strong>
+    units. Remove any other layers so that only the planning unit layer
+    is present.</p>
+<p>9)  The portfolio identified by Marxan may be efficient but it is very
+    fragmented and would be ecologically unviable and expensive to
+    manage. Marxan can overcome this problem by including a boundary
+    cost that favours the identification of portfolios that form patches
+    of planning units. Do this by choosing <strong>Launch Marxan</strong> from the
+    <strong>CLUZ</strong> menu again but this time, click the <strong>Include boundary cost
+    (BLM)</strong> on <img src="/images/Cross.png" alt="" 
+     style="width:0.18748031496062992in; height:0.17748031496062992in;"> and set a value of <strong>0.25</strong>. This is
+    Analysis 2.</p>
+<p>10) Repeat steps 6 to 9 to fill in the table below for Analysis 2 and
+    use <strong>Import/Export</strong> and <strong>Export Map to Image...</strong> save the best
+    output. Name the file <strong>area_0_25.png</strong>.</p>
+<p>Now go through the same process for two more analyses that use
+    higher BLM values, so that Analysis 3 uses a BLM value of 0.5, and
+    Analysis 4 uses a BLM value of 2. Table 1 below gives the names you
+    should use for the screenshot image files.</p>
+<p>11) Compare the four best portfolios you have produced in terms of
+    efficiency (number of planning units selected) and fragmentation
+    (number of patches). You should see that as you increase the BLM
+    value, the portfolio cost and area increase and the results consist
+    of fewer, larger patches. This is because selecting large patches
+    that best the meet the targets is less efficient than choosing the
+    individual planning units that best the meet the targets.</p>
+<p>You should also see from the selection frequency scores, that more
+    planning units are never selected or always selected. This is
+    because when you add an extra constraint to your analysis (the
+    requirement to identify larger patches), there are fewer ways to
+    achieve good results. This means the results of each run are more
+    similar, so the same planning units tend to get selected</p>
+<h3 id="results-table">Results table</h3>
+<p><img src="/images/Results_table.png" alt="" 
+     style="width:9in; height:3.5in; display: block; margin: 0 auto;"></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Exercise-two/" class="btn btn-neutral float-right" title="Producing the CLUZ files">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Exercise-two/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+      <script src="../../js/open_in_new_tab.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
