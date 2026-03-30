@@ -1,1 +1,308 @@
-<meta name="google-site-verification" content="W9RAeiDVCJGG8xF2MwEz-ZnranklVNu0rhrdLPkYiEw" />
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Using CLUZ to run Marxan with Zones - CLUZ</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Using CLUZ to run Marxan with Zones";
+        var mkdocs_page_input_path = "tutorials\\Exercise-three.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script>
+   
+  <meta name="google-site-verification" content="W9RAeiDVCJGG8xF2MwEz-ZnranklVNu0rhrdLPkYiEw" />
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> CLUZ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Exercise-one/">An introduction to CLUZ</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Exercise-two/">Producing the CLUZ files</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Using CLUZ to run Marxan with Zones</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1"></a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exercise-3-using-cluz-to-run-marxan-with-zones">Exercise 3: Using CLUZ to run Marxan with Zones</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#part-3a-converting-the-cluz-files-into-marxan-with-zones-format">Part 3a: Converting the CLUZ files into Marxan with Zones format</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#part-3b-updating-the-target-and-zones-table-files">Part 3b: Updating the target and zones table files</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#part-3b-updating-the-planning-unit-files">Part 3b: Updating the planning unit files</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Links</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="https://github.com/CLUZ-systematic-conservation-planning/CLUZ-source-code">Browse source code</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://plugins.qgis.org/plugins/cluz/">CLUZ on QGIS plugins repository</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://marxansolutions.org/">Marxan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://docs.qgis.org/">QGIS Docs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="https://prioritizr.net/">Prioritizr website</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">CLUZ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tutorials</li>
+      <li class="breadcrumb-item active">Using CLUZ to run Marxan with Zones</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="a-tutorial-for-using-cluz-with-qgis">A tutorial for using CLUZ with QGIS</h1>
+<h2 id="_1"></h2>
+<h2 id="exercise-3-using-cluz-to-run-marxan-with-zones">Exercise 3: Using CLUZ to run Marxan with Zones</h2>
+<p>CLUZ is a QGIS plugin that lets people design conservation landscapes and seascapes based on the
+principles of systematic conservation planning. It can be used for on-screen terrestrial and marine
+spatial planning and also acts as a link for the Marxan and Marxan with Zones spatial prioritisation
+software packages. CLUZ was funded by the UK Government’s Darwin Initiative.</p>
+<p>Exercise 1 of these tutorials showed how to run Marxan through CLUZ and Exercise 2 showed how to
+create the files needed to run Marxan. Marxan is designed to identify which new areas should be added
+to a conservation area network. This involves dividing up the planning region into a series of planning
+units and selecting the best set planning units for meeting conservation targets, whilst minimising costs
+and maintaining connectivity. In effect, this means Marxan assigns each planning unit to one of two
+management zones: a conservation zone and a business-as-usual zone.</p>
+<p>In the real world, we often want to develop ecological networks consisting of more than two zones. For
+example, we might want to distinguish between different types of conservation zone or include zones
+for habitat creation and restoration. Marxan with Zones was developed for exactly this type of situation
+and can also be run through CLUZ. This exercise shows how to produce the Marxan with Zones files
+and then run a simple Marxan with Zones analysis. <strong><em>If you are not familiar with using CLUZ to run
+Marxan, we strongly recommend that you complete Exercise 1 and Exercise 2 first.</em></strong></p>
+<h3 id="part-3a-converting-the-cluz-files-into-marxan-with-zones-format">Part 3a: Converting the CLUZ files into Marxan with Zones format</h3>
+<p>The process for producing Marxan with Zones files is based on setting everything up in the Marxan
+format and then transforming it into the Marxan with Zones format. In this section you will produce the
+files that CLUZ needs by transforming the files used in Exercise 1 into the Marxan with Zones format.</p>
+<p><strong>1</strong>) This exercise uses the tutorial files that are produced as part of Exercise 1. To set up these files,
+you need to at the very least complete sections 1a and 1b of Exercise 1 (although we recommend
+completing the whole exercise). If you follow the instructions in Exercise 1 fully then you should
+produce a file named ex1.clz and saved it in the \cluz_ex1 folder. This file lists the locations of all
+the files used by CLUZ and Marxan.</p>
+<p><strong>2</strong>) Before you open QGIS, create a folder named cluz_ex3 in the same directory as the cluz_ex1
+folder. This is where you will save the Marxan with Zones input and output files. You also need to
+download and unzip Marxan with Zones <strong><a href="https://marxansolutions.org/software/">HERE</a></strong>.</p>
+<p><strong>3</strong>) Open QGIS and make sure the <strong>CLUZ</strong> plugin is installed. In the CLUZ menu choose <img src="/images/Cog_icon.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>View and
+edit CLUZ setup file</strong> and click on the <strong>Load</strong> button. Select the <strong>ex1.clz</strong> file that you produced in
+Exercise 1 and CLUZ will display the five pathways of the different files and folders. Click on the
+<strong>Close</strong> button and you will see that CLUZ has automatically added the planning unit shapefile to the
+QGIS Table of Contents.</p>
+<p><strong>4</strong>) You are now ready to convert these files from Marxan to Marxan with Zones format. In the <strong>CLUZ</strong>
+menu choose <img src="/images/CreateMZfiles.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Transform CLUZ files from Marxan to Marxan with Zones format</strong>. Start by
+clicking on the <strong>Browse</strong> button next to the <strong>Marxan with Zones location</strong> input. Navigate to the folder
+where you saved Marxan with Zones and, if you are using Windows computer, choose
+<strong>MarZone_x64.exe</strong> (for other operating systems you will have different options).</p>
+<p>Next click on the Browse button next to <strong>Empty folder for new files</strong> and specify the location of the
+<em>cluz_ex3</em> folder you created in Step 2 above.</p>
+<p><img src="/images/Transform_M_to_MZ.png" alt="" 
+     style="width:6.5in; height:3.7in; display: block; margin: 0 auto;"></p>
+<p>Change the name of the <strong>New Marxan with Zones setup file name</strong> from <strong><em>zones_ex1</em></strong> to <strong><em>ex3</em></strong> but
+keep the default names for the planning unit layer, the target file and the zone file. Also keep the
+number of zones to be created as the default number of 3. Click on <strong>OK</strong>.</p>
+<p>CLUZ has now produced the Marxan with Zones files, so <strong>close QGIS</strong>.</p>
+<h3 id="part-3b-updating-the-target-and-zones-table-files">Part 3b: Updating the target and zones table files</h3>
+<p>This tutorial is based on designing an ecological network based on three zones. Zone 1 will be for
+protected areas, which will be managed for biodiversity and receive the highest levels of conservation
+funding and protection. Zone 2 will be for OECMs (other effective area-based conservation measures),
+which will be managed for community-based ecotourism and have lower levels of anti-poaching activity.
+Zone 3 will be for the rest of the landscape and will have no specific conservation management.</p>
+<p><strong>5)</strong> Using Windows Explorer, look at the files created in the <em>cluz_ex3</em> folder. You will see the input
+folder, which contains the <strong>puvspr2.dat</strong> file copied over from Exercise 1 that lists the amount of
+each feature in each planning unit. You will see the output folder, which is currently empty. You will
+see the files that make up the planning unit shapefile (named <strong>zones_puLayer</strong>), the target files
+(named <strong>zones_targets.csv</strong>) and the zones file (named <strong>zones_details.csv</strong>). You will also see the
+<strong>ex3.clz</strong> file that specifies the locations of these other files and is used by CLUZ.</p>
+<p><strong>6)</strong> The zones file is a simple csv file that lists the numerical id value of each zone and their names. As
+a first step, open this <strong>zones_details.csv</strong> file and change the name of each zone from <strong><em>Blank</em></strong> to <strong>PA</strong>
+for Zone 1, <strong>OECM</strong> for Zone 2, and <strong>Other</strong> for Zone 3. Save your changes.</p>
+<p><img src="/images/Excel.png" alt="" 
+     style="width:8.5in; height:2.2in; display: block; margin: 0 auto;"></p>
+<p><strong>7</strong>) Open QGIS and in the <strong>CLUZ</strong> menu choose <img src="/images/Cog_icon.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>View and edit CLUZ setup file</strong>. <strong>Load</strong> the <strong>ex3.clz</strong>
+file and notice the paths names of the different files that you created above. <strong>Close</strong> the dialog box.</p>
+<p>The CLUZ file system is based on only having one planning unit theme and this is still the case
+when using Marxan with Zones. So, you will see that CLUZ has added three copies of the planning
+unit layer, one for each zone and named <strong>Z1 PA Planning units</strong>, <strong>Z2 OECM Planning units</strong> and <strong>Z3
+Other Planning units</strong>.</p>
+<p>You will also see the legends for each layer show that for Marxan with Zones, CLUZ uses slightly
+different names for the status of each planning unit: <strong><em>Locked</em></strong>, <strong><em>Excluded</em></strong>, <strong><em>Unassigned</em></strong> and
+<strong><em>Earmarked</em></strong>. At the moment, every planning unit in all three zones has <strong><em>Unassigned</em></strong> status.</p>
+<p><strong>8)</strong> Another addition to CLUZ for Marxan with Zones is that the <img src="/images/Open_zones_table.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Open Zones Table</strong> button is active.
+Click on this button to see a table showing the id values and names that you specified in the
+<strong>zones_details.csv</strong> file. <strong>Close</strong> the table.</p>
+<p><strong>9)</strong> Click on the <img src="/images/Target.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Open Zones Table</strong> button. You will see the same list of features from Exercise 1 but
+a number of new fields have been added, all given default values at this early stage. The <strong>Z1_Prop</strong>,
+<strong>Z2_Prop</strong> and <strong>Z3_Prop</strong> fields specify the proportion of that feature that counts towards targets if a
+planning unit is assigned to the associated zone. This will be explained in more detail below.</p>
+<p>The <strong>Z1_Target</strong>, <strong>Z2_Target</strong> and <strong>Z3_Target</strong> fields specify zone specific targets, which will also be
+explained in more detail below. The <strong>Z1_Ear+Lock</strong>, <strong>Z2_Ear+Lock</strong> and <strong>Z3_Ear+Lock</strong> fields show
+the contributing amount of each feature in planning units with <strong>Earmarked</strong> or <strong>Locked</strong> status in each
+zone. At present, all these values are 0 because every planning unit has Unassigned status.</p>
+<p><strong>Close</strong> the Target table.</p>
+<h3 id="part-3b-updating-the-planning-unit-files">Part 3b: Updating the planning unit files</h3>
+<p>This tutorial is based on designing an ecological network based on three zones. Zone 1 will be for
+protected areas, which will be managed for biodiversity and give the highest levels of protection. Zone 2
+will be for OECMs (other effective area-based conservation measures), which will be managed for
+community-based ecotourism and have lower levels of anti-poaching activity. Zone 3 will be for the rest
+of the landscape and will have no specific conservation management</p>
+<p><strong>1)</strong> Right click on the <strong>Z1 PA Planning units</strong> layer in the Table of Contents and select the <img src="/images/Open attribute.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Open
+Attribute Table</strong> option. You will see that the table has eight fields. The <strong>Unit_ID</strong> field gives the
+unique identifier for each planning unit and the <strong>Area</strong> field the area of each planning unit. The other
+fields describe the cost and status of each planning unit in each zone. At present, all the cost
+values are 0 and all the status values are Unassigned. Close the Attribute table.</p>
+<p><strong>2)</strong> You will now update the planning unit status details, copying information from the Exercise 1 layer.
+In Exercise 1, some planning units were in a nature reserve and set as conserved (always selected
+in Marxan) and some were going to be converted to housing and set as excluded (never selected
+by Marxan). You will treat them differently in this exercise, illustrating one of the main differences
+between using Marxan and Marxan with Zones. In this exercise, you will lock-in the nature reserve
+planning units into Zone 1 and lock-in the proposed housing planning units into Zone 3.</p>
+<p>Click on the <img src="/images/Data_manager.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Open Data Source Manager</strong> and choose to add a <img src="/images/Vector.png" alt="" 
+     style="width:0.7in; height:0.3in; "vertical-align: middle;"> <strong>Vector</strong> layer. <strong>Add</strong>
+the planning unit shapefile (<strong>planning_units.shp</strong>) from Exercise 1. Next double-click on the <strong>Z1 PA
+Planning units layer</strong> in the Table of Contents to bring up the <strong>Layer Properties</strong> dialog box. Select <img src="/images/Join.png" alt="" style="width:0.3in; height:0.3in; "vertical-align: middle;">
+<strong>Joins</strong> and click on the <img src="/images/Add_join.png" alt="" style="width:0.3in; height:0.3in; "vertical-align: middle;"> <strong>Add new join</strong> button. For the <strong>Join layer</strong>, select <strong>planning units</strong>, for
+the <strong>Join field</strong> select <strong>Unit_ID</strong> and for the <strong>Target field</strong> select <strong>Unit_ID</strong>. Click on <strong>OK</strong> to make the join and click on <strong>OK</strong> again to close the <strong>Layer Properties</strong> dialog box.</p>
+<p><strong>3)</strong> Right click on the <strong>Z1 PA Planning units</strong> layer in the Table of Contents and select the <img src="/images/Open attribute.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Open
+Attribute Table</strong> option again. You will see that the fields from the Exercise 1 planning units have
+been temporarily added, (<strong>planning units_Area, planning units_Cost</strong>, etc). You will use this
+information to update the planning unit status values in each zone.</p>
+<p><strong>Close</strong> the attribute table.</p>
+<p><img src="/images/layers.png" alt="" 
+     style="width:2in; height:2.6in; float: right;"></p>
+<p>4) First you will update the status of planning units in Zone 1. Make the
+Exercise 1 planning units layer invisible by clicking off its <img src="/images/Blank_box.png" alt=" " width="20" height="20" style="vertical-align: middle;">
+checkbox in the Table of Contents. Make the Z1 PA Planning units
+layer active by clicking on it in the Table of Contents so it has a blue
+bar around it (as shown in the figure to the right). QGIS will now
+update the information in this selected shapefile (although the Z1, Z2
+and Z3 planning units are copies of the same file, so any changes
+you make to the attribute tables will be applied to all of them).</p>
+<p>In the main menu bar, click on the <img src="/images/express.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Select Feature by Expression</strong>
+button. In the <strong>Select by Expression</strong> dialog box, type <strong>"planning
+units_Status" = 'Conserved'</strong> into the Expression box and then click
+on the <strong>Select Features button</strong>. Make sure the text is exactly the
+same as that shown below in the screen shot from the Select by Expression dialog box. <strong>Close</strong> the
+dialog box to see how it has updated the layer.</p>
+<p><img src="/images/Z_expression.png" alt="" 
+     style="width:8.5in; height:4.7in; display: block; margin: 0 auto;"></p>
+<p><strong>5)</strong> The Z1 PA planning units in the north-east of the planning region will now be shown in yellow. Click
+on the <img src="/images/Status_button.png" alt=" " width="20" height="20" style="vertical-align: middle;"> <strong>Change Status</strong> panel and make sure the <strong>Zone name</strong> is <strong>Zone 1 – PA</strong>. Click on the <strong>Allow
+changes to Locked and Excluded status</strong> tick box and then specify <strong>Set as Locked In</strong>. Click on
+the <strong>Change</strong> button and you will see that the selected planning units are shown in dark green,
+indicating that they have <strong><em>Locked in</em></strong> status. Click on the <strong>Close</strong> button.</p>
+<p><img src="/images/layers_second.png" alt="" 
+     style="width:2in; height:2.6in; float: right;"></p>
+<p><strong>6)</strong> Next you will update the status of planning units in Zone 3. Make the
+<strong>Z1 PA planning units</strong> and <strong>Z2 OECM planning units</strong> invisible by
+click off their tick boxes <img src="/images/Blank_box.png" alt=" " width="20" height="20" style="vertical-align: middle;"> in the Table of Contents, so you can see
+<strong>Z3 Other planning units</strong> below. Make the <strong>Z3 Other Planning units</strong>
+layer active by clicking on it in the Table of Contents so it has a blue
+bar around it (as shown in the figure to the right).</p>
+<p>You will now join the Exercise 1 planning unit details to this Z3
+planning unit layer. Double-click on the <strong>Z3 Other Planning units
+layer</strong> in the Table of Contents to bring up the <strong>Layer Properties</strong>
+dialog box. Once again, select <img src="/images/Join.png" alt="" style="width:0.3in; height:0.3in; "vertical-align: middle;"> <strong>Joins</strong> and click on the <img src="/images/Add_join.png" alt="" style="width:0.3in; height:0.3in; "vertical-align: middle;"> <strong>Add
+new join</strong> button. Again, for the <strong>Join layer</strong>, select <strong>planning units</strong>, for
+the <strong>Join field</strong> select <strong>Unit_ID</strong> and for the <strong>Target field</strong> select <strong>Unit_ID</strong>.
+Click <strong>OK</strong> to make the join and click <strong>OK</strong> again to close the dialog box.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Exercise-two/" class="btn btn-neutral float-left" title="Producing the CLUZ files"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Exercise-two/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+      <script src="../../js/open_in_new_tab.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
