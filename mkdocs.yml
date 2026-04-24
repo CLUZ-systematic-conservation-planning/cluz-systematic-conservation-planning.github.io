@@ -1,10 +1,26 @@
 site_name: CLUZ
+site_description: QGIS plugin for conservation land-use zoning, ecological networks, and systematic conservation planning
+
+nav:
+  - Conservation Land-Use Zoning software (CLUZ): index.md
+  - Tutorials:
+      - An introduction to CLUZ: tutorials/Exercise-one.md
+      - Producing the CLUZ files: tutorials/Exercise-two.md
+      - Using CLUZ to run Marxan with Zones: tutorials/Exercise-three.md
+  - Links: 
+      - Browse source code: https://github.com/CLUZ-systematic-conservation-planning/CLUZ-source-code
+      - CLUZ on QGIS plugins repository: https://plugins.qgis.org/plugins/cluz/
+      - Marxan: https://marxansolutions.org/
+      - QGIS Docs: https://docs.qgis.org/
+      - Prioritizr website: https://prioritizr.net/
 
 plugins:
   - search
   - open-in-new-tab
 
-theme: readthedocs
+theme:
+  name: readthedocs
+  custom_dir: overrides
 
 extra_css:
   - assets/css/extra.css
